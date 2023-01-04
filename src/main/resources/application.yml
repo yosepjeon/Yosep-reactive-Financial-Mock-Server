@@ -1,0 +1,32 @@
+server:
+  port: 50000
+  servlet:
+    encoding:
+      charset: UTF-8
+
+logging:
+  level:
+    root: info
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    algorithm: PBEWithMD5AndDES
+    property:
+      prefix: ENC(
+      suffix: )
+    pool-size: 1
+
+spring:
+  jpa:
+    show-sql: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mockup?useUnicode=true&characterEncoding=utf8
+    username: ENC(swcGrnti91sJAT6lUkQkTQ==)
+    password: ENC(/QsDwJp0oBbXRC+R4GH9OA==)
+#    username: root
+#    password: dytpq13
+    hikari:
+      maximum-pool-size: 50
+      max-lifetime: 600000
